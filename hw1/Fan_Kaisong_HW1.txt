@@ -1,0 +1,8 @@
+https://github.com/fankaisong/CSCE-606/tree/master/hw1
+
+
+Kaisongs-MacBook-Pro:hw1 kaisongfan$ rspec spec/
+..................................
+
+Finished in 0.01953 seconds (files took 0.1862 seconds to load)
+34 examples, 0 failures
