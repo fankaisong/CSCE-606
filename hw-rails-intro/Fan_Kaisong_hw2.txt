@@ -1,0 +1,3 @@
+https://github.com/fankaisong/rottenpotatoes-rails-intro
+
+http://kaisong123.herokuapp.com/
