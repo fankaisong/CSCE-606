@@ -15,6 +15,8 @@ module NavigationHelpers
 
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
 
+    when /^the Similar Movies page for "(.+)"/ then find_similar_movies_path($1)
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
