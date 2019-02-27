@@ -23,3 +23,12 @@ Then /I should see all the movies/ do
     step %{I should see "#{movie.title}"}
   end
 end
+
+
+
+
+Then /the director of "(.*)" should be "(.*)"/ do |movie, director|
+    movie = Movie.where(:title => movie)[0]
+    (movie[:director] == director).should be true
+end
+

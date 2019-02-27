@@ -83,7 +83,7 @@ RSpec.describe MoviesController, type: :controller do
         it 'redirects to the index when a director is not present' do
             mov = Movie.find_by_title("Alien")
             get :search_movies, {:id => mov}
-            expect(flash[:notice]).to eq("\"#{mov.title}\" does not have a director!")
+            expect(flash[:notice]).to eq("\'#{mov.title}\' has no director info")
             expect(response).to redirect_to(root_url)
         end
     end
