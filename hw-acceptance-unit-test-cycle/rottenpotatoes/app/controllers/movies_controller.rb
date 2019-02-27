@@ -38,13 +38,6 @@ class MoviesController < ApplicationController
   end
 
   def search_movies
-    # @similar_movies = Movie.similar_movies(params[:title])
-    # if @similar_movies.nil?
-    #   flash[:notice] = "\"#{params[:title]}\" does not have a director!"
-    #   redirect_to root_url
-    # end
-    # @movie = Movie.where(:title=> params[:title]).first
-
     @movie = Movie.find(params[:id])
     if @movie.director == nil or @movie.director == " " or @movie.director == ""
           flash[:notice] = "\"#{@movie.title}\" does not have a director!"
