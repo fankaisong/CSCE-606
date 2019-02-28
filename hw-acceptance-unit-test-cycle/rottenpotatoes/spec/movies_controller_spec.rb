@@ -20,6 +20,23 @@ RSpec.describe MoviesController, type: :controller do
         end
     end
 
+    describe 'update' do
+        before :each do
+        Movie.create(title: 'HaHa', rating: 'PG', director: 'Mike', release_date: Date.new(2019,1,1))
+        end
+
+        it 'update the movie' do
+            changed = {:title=> "HaHa=>LOL"}
+            mov = Movie.find_by_title("HaHa")
+            put :update, :id=> mov, :movie=>changed
+            expect(flash[:notice]).to eq("#{changed[:title]} was successfully updated.")
+            expect(response).to redirect_to(movie_path)
+            expect(Movie.find(mov).title).to eq('HaHa=>LOL')
+        end
+    end
+
+
+
 
 
     describe 'edit' do
