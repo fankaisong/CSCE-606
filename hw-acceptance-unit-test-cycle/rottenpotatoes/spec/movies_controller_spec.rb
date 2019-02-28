@@ -28,10 +28,11 @@ RSpec.describe MoviesController, type: :controller do
         it 'updates the movie' do
             changed = {:title=> "HaHa=>LOL"}
             mov = Movie.find_by_title("HaHa")
-            post :update, :id=> mov, :movie=>changed
+            post :update, {:id=> mov, :movie=>changed}
+            mov.reload
             expect(flash[:notice]).to eq("#{changed[:title]} was successfully updated.")
             expect(response).to redirect_to(movie_path)
-            expect(Movie.find(mov).title).to eq('HaHa=>LOL')
+            expect(mov.title).to eq("HaHa=>LOL")
         end
     end
 
